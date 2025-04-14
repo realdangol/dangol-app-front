@@ -8,16 +8,9 @@
     "mobile"
   ],
   "scripts": {
-    "lint:web": "cd ./web && pnpm lint",
-    "lint:mobile": "cd ./mobile && pnpm lint",
+    "lint:web": "pnpm --filter ./web lint",
+    "lint:mobile": "pnpm --filter ./mobile lint",
     "postinstall": "husky"
-  },
-  "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
-      "prettier --cache --write .",
-      "cd ./web && pnpm lint",
-      "cd ./mobile && pnpm lint"
-    ]
   },
   "keywords": [],
   "author": "",
