@@ -9,7 +9,14 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "prettier --cache --write .",
+      "eslint"
+    ]
   },
   "jest": {
     "preset": "jest-expo"
