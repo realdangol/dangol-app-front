@@ -8,7 +8,16 @@
     "mobile"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:web": "cd ./web && pnpm lint",
+    "lint:mobile": "cd ./mobile && pnpm lint",
+    "postinstall": "husky"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "prettier --cache --write .",
+      "cd ./web && pnpm lint",
+      "cd ./mobile && pnpm lint"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -17,6 +26,8 @@
   "devDependencies": {
     "@dangol-dev/eslint-plugin": "1.0.0",
     "@dangol-dev/front-prettier-config": "1.0.0",
-    "@dangol-dev/front-ts-config": "1.0.0"
+    "@dangol-dev/front-ts-config": "1.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1"
   }
 }
