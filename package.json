@@ -12,12 +12,6 @@
     "lint:mobile": "pnpm --filter ./mobile lint",
     "prepare": "husky"
   },
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
-      "pnpm --filter ./web lint-staged",
-      "pnpm --filter ./mobile lint-staged"
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
