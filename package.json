@@ -19,8 +19,9 @@
   "devDependencies": {
     "@dangol-dev/eslint-plugin": "1.0.0",
     "@dangol-dev/front-prettier-config": "1.0.0",
-    "@dangol-dev/front-ts-config": "1.0.0",
+    "@dangol-dev/front-ts-config": "1.0.1",
     "husky": "^9.1.7",
-    "lint-staged": "^15.5.1"
+    "lint-staged": "^15.5.1",
+    "prettier": "^3.5.3"
   }
 }
