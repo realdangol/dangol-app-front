@@ -10,7 +10,13 @@
   "scripts": {
     "lint:web": "pnpm --filter ./web lint",
     "lint:mobile": "pnpm --filter ./mobile lint",
-    "postinstall": "husky"
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "pnpm --filter ./web lint-staged",
+      "pnpm --filter ./mobile lint-staged"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -19,7 +25,7 @@
   "devDependencies": {
     "@dangol-dev/eslint-plugin": "1.0.0",
     "@dangol-dev/front-prettier-config": "1.0.0",
-    "@dangol-dev/front-ts-config": "1.0.0",
+    "@dangol-dev/front-ts-config": "1.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1"
   }
