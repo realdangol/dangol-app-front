@@ -38,7 +38,7 @@ const slides = [
 
 const OnboardingPage = () => {
   return (
-    <div className="relative max-w-[480px] h-dvh mx-auto">
+    <main className="relative">
       <Swiper
         className="w-[210px] h-full"
         modules={[Pagination]}
@@ -67,7 +67,7 @@ const OnboardingPage = () => {
           <Button className="w-full">로그인</Button>
         </Link>
       </div>
-    </div>
+    </main>
   );
 };
 
