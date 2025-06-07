@@ -9,3 +9,4 @@ export { default as SignUpStep4Form } from './SignUpStep4Form';
 export { default as SignUpStep5Form } from './SignUpStep5Form';
 export { default as SignUpSubmitButton } from './SignUpSubmitButton';
 export { default as SignUpSubTitle } from './SignUpSubTitle';
+export { default as Timer } from './Timer';

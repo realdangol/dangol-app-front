@@ -21,7 +21,7 @@ const schema = yup.object().shape({
 });
 
 const SignUpStep1Form = () => {
-  const { setStep, setFormValues } = useSignUp();
+  const { setStep, storeFormValues } = useSignUp();
   const {
     control,
     formState: { isValid },
@@ -39,7 +39,7 @@ const SignUpStep1Form = () => {
   const allAgreed = watch('serviceAgree') && watch('smsAgree') && watch('marketingAgree');
 
   const onValid: SubmitHandler<SignUpStep1FormValues> = (data) => {
-    setFormValues(data);
+    storeFormValues(data);
     setStep(2);
   };
 

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 
 import SignUpContext from '../_components/SignUpProvider';
+import type { SignUpFormValues } from '../types';
 
 const useSignUp = () => {
   const signUpContext = useContext(SignUpContext);
@@ -9,11 +10,18 @@ const useSignUp = () => {
 
   const { step, formValues, setStep, setFormValues } = signUpContext;
 
+  const storeFormValues = (data: Partial<SignUpFormValues>) => {
+    setFormValues({
+      ...formValues,
+      ...data,
+    });
+  };
+
   return {
     step,
     formValues,
     setStep,
-    setFormValues,
+    storeFormValues,
   };
 };
 

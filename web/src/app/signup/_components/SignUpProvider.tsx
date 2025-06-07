@@ -3,13 +3,9 @@
 import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
 import { createContext, useState } from 'react';
 
-type SignUpStep = 1 | 2 | 3 | 4 | 5 | 6;
+import type { SignUpFormValues } from '../types';
 
-type SignUpFormValues = {
-  serviceAgree: boolean;
-  smsAgree: boolean;
-  marketingAgree: boolean;
-};
+type SignUpStep = 1 | 2 | 3 | 4 | 5 | 6;
 
 type SignUpState = {
   step: SignUpStep;
@@ -21,11 +17,14 @@ type SignUpState = {
 const SignUpContext = createContext<SignUpState | null>(null);
 
 export const SignUpProvider = ({ children }: PropsWithChildren) => {
-  const [step, setStep] = useState<SignUpStep>(1);
+  const [step, setStep] = useState<SignUpStep>(2);
   const [formValues, setFormValues] = useState<SignUpFormValues>({
     serviceAgree: false,
     smsAgree: false,
     marketingAgree: false,
+    name: '',
+    phone: '',
+    isVerify: false,
   });
 
   return (

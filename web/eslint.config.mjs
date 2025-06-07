@@ -22,6 +22,9 @@ const eslintConfig = [
       'react/display-name': 'off',
     },
   },
+  {
+    ignores: ['src/mocks/*'],
+  },
 ];
 
 export default eslintConfig;
