@@ -38,7 +38,7 @@ const slides = [
 
 const OnboardingPage = () => {
   return (
-    <main className="relative">
+    <main className="relative w-full h-dvh">
       <Swiper
         className="w-[210px] h-full"
         modules={[Pagination]}
@@ -63,7 +63,7 @@ const OnboardingPage = () => {
         ))}
       </Swiper>
       <div className="absolute bottom-10 z-1 w-full flex justify-center">
-        <Link className="w-[85vw]" href={'/login'}>
+        <Link className="w-[85%]" href={'/login'}>
           <Button className="w-full">로그인</Button>
         </Link>
       </div>
