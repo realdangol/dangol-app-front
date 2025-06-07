@@ -2,7 +2,8 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 
-import { MSWProvider } from '@/components';
+import { Dialog, MSWProvider } from '@/components';
+import { DialogProvider } from '@/components/Dialog/DialogProvider';
 import { initMSW } from '@/mocks';
 
 export const metadata: Metadata = {
@@ -23,7 +24,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="max-w-[480px] w-full h-dvh mx-auto px-4 flex flex-col items-center justify-center">
-          <MSWProvider>{children}</MSWProvider>
+          <MSWProvider>
+            <DialogProvider>
+              {children}
+              <Dialog />
+            </DialogProvider>
+          </MSWProvider>
         </div>
       </body>
     </html>

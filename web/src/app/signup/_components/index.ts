@@ -1,3 +1,4 @@
+export { default as DuplicatePhoneModal } from './DuplicatePhoneModal';
 export { default as SignUpAgreeCheckBox } from './SignUpAgreeCheckBox';
 export { default as SignUpAgreeCheckBoxLabel } from './SignUpAgreeCheckBoxLabel';
 export { default as SignUpHeader } from './SignUpHeader';

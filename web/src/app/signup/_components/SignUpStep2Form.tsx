@@ -10,10 +10,12 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
 import { Button, TextField } from '@/components';
+import useDialog from '@/components/Dialog/useDialog';
 import handleOnlyNumberChange from '@/utils/handleOnlyNumberChange';
 
 import { useSignUp } from '../_hooks';
 import type { SignUpStep2FormValues } from '../types';
+import DuplicatePhoneModal from './DuplicatePhoneModal';
 import SignUpSubmitButton from './SignUpSubmitButton';
 import Timer from './Timer';
 
@@ -25,6 +27,7 @@ const schema = yup.object().shape({
 });
 
 const SignUpStep2Form = () => {
+  const { openDialog } = useDialog();
   const { setStep, storeFormValues } = useSignUp();
   const {
     formState: { errors, isValid },
@@ -63,7 +66,7 @@ const SignUpStep2Form = () => {
       if (error instanceof AxiosError) {
         switch (error.status) {
           case 409:
-            setError('phone', { message: '이미 등록된 휴대폰번호 입니다.' });
+            openDialog(<DuplicatePhoneModal />, { withCloseButton: false });
             break;
         }
       }

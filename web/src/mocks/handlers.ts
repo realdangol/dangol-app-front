@@ -5,6 +5,7 @@ export const handlers = [
     const { phone } = await request.json();
 
     if (phone === '01012341234') {
+      // 이미 등록된 휴대폰번호
       return new HttpResponse(null, { status: 409 });
     }
 
@@ -22,6 +23,7 @@ export const handlers = [
         message: '인증 성공',
       });
     } else {
+      // 인증번호 틀림
       return new HttpResponse(null, { status: 400 });
     }
   }),
