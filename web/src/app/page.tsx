@@ -1,7 +1,18 @@
-import React from 'react';
+'use client';
 
-const HomePage = () => {
-  return <div>HomePage</div>;
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+
+const RootPage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const hasVisited = localStorage.getItem('hasVisited');
+
+    router.replace(hasVisited ? '/login' : '/onboarding');
+  }, []);
+
+  return null;
 };
 
-export default HomePage;
+export default RootPage;

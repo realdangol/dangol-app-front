@@ -1,0 +1,23 @@
+#containerForBullets {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.swiper-custom-bullet {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d1d1d1;
+}
+
+.swiper-custom-bullet.swiper-custom-bullet-active {
+  background-color: #e27242;
+}
