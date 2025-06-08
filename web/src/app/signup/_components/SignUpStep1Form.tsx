@@ -47,7 +47,7 @@ const SignUpStep1Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onValid)} onKeyDown={preventSubmitByEnter}>
-      <div>
+      <div className="px-4">
         <div className="py-4 px-3 border border-neutral-300 rounded-xl">
           <CheckBox
             label={<span className="text-body1-bold text-neutral-600">전체 동의</span>}

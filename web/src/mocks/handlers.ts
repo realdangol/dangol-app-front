@@ -1,3 +1,4 @@
+import { SignUpFormValues } from '@/app/signup/types';
 import { http, HttpResponse } from 'msw';
 
 export const handlers = [
@@ -26,5 +27,8 @@ export const handlers = [
       // 인증번호 틀림
       return new HttpResponse(null, { status: 400 });
     }
+  }),
+  http.post<any, SignUpFormValues>('/mock/signup', async ({ request }) => {
+    const body = await request.json();
   }),
 ];

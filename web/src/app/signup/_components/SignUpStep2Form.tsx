@@ -5,11 +5,11 @@ import axios, { AxiosError } from 'axios';
 import clsx from 'clsx';
 import type { ChangeEvent } from 'react';
 import React, { useState } from 'react';
-import type { SubmitHandler } from 'react-hook-form';
+import type { Resolver, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
-import { Button, TextField } from '@/components';
+import { Button, TextField, Timer } from '@/components';
 import useDialog from '@/components/Dialog/useDialog';
 import handleOnlyNumberChange from '@/utils/handleOnlyNumberChange';
 
@@ -17,18 +17,17 @@ import { useSignUp } from '../_hooks';
 import type { SignUpStep2FormValues } from '../types';
 import DuplicatePhoneModal from './DuplicatePhoneModal';
 import SignUpSubmitButton from './SignUpSubmitButton';
-import Timer from './Timer';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
   phone: yup.string().required(),
-  code: yup.string().required(),
+  code: yup.string().notRequired(),
   isVerify: yup.boolean().required().oneOf([true]),
 });
 
 const SignUpStep2Form = () => {
   const { openDialog } = useDialog();
-  const { setStep, storeFormValues } = useSignUp();
+  const { formValues, setStep, storeFormValues } = useSignUp();
   const {
     formState: { errors, isValid },
     register,
@@ -40,12 +39,12 @@ const SignUpStep2Form = () => {
     handleSubmit,
   } = useForm<SignUpStep2FormValues>({
     defaultValues: {
-      name: '',
-      phone: '',
+      name: formValues.name || '',
+      phone: formValues.phone || '',
       code: '',
-      isVerify: false,
+      isVerify: formValues.isVerify || false,
     },
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema) as Resolver<SignUpStep2FormValues>,
   });
   const isVerified = watch('isVerify');
   const [isRequestVerificationCode, setIsRequestVerificationCode] = useState(false);
@@ -116,7 +115,7 @@ const SignUpStep2Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onValid)}>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 px-4">
         <TextField {...register('name')} label="이름" placeholder="이름을 입력해주세요." />
         <div className={clsx('flex gap-2', !!errors.phone ? 'items-center' : 'items-end')}>
           <div className="flex-1">

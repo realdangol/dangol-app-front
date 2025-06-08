@@ -48,7 +48,7 @@ const SignUpStep4Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onValid)} onKeyDown={preventSubmitByEnter}>
-      <div>
+      <div className="px-4">
         <TextField
           {...register('birthDate', {
             onChange: handleBirthDateChange,

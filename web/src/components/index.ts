@@ -5,3 +5,4 @@ export { default as Dialog } from './Dialog/DialogRenderer';
 export { default as MSWProvider } from './MSWProvider';
 export { default as RadioGroup } from './RadioGroup';
 export { default as TextField } from './TextField/TextField';
+export { default as Timer } from './Timer';

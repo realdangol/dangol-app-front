@@ -20,7 +20,7 @@ const SignUpStep3Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className="px-4">
         <RadioGroup
           title="성별"
           value={gender}
