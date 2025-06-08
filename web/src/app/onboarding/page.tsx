@@ -53,11 +53,11 @@ const OnboardingPage = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.title}>
             <div className="h-full flex flex-col justify-center items-center p-5">
-              <h1 className="text-h text-neutral-800">{slide.title}</h1>
-              <p className="text-body3-regular text-center mt-5 mb-8 text-neutral-500 whitespace-pre">
+              <h1 className="dangol-typo-h text-neutral-800">{slide.title}</h1>
+              <p className="dangol-typo-body3-regular text-center mt-5 mb-8 text-neutral-500 whitespace-pre">
                 {slide.description}
               </p>
-              <Image src={slide.image} alt={slide.title} />
+              <Image src={slide.image} alt={slide.title} loading="eager" />
             </div>
           </SwiperSlide>
         ))}

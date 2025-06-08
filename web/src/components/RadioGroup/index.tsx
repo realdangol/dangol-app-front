@@ -28,7 +28,9 @@ const RadioGroup = ({
   return (
     <fieldset>
       {title && (
-        <legend className="text-body2-regular font-medium text-neutral-500 mb-1">{title}</legend>
+        <legend className="dangol-typo-body2-regular font-medium text-neutral-500 mb-2">
+          {title}
+        </legend>
       )}
       <div
         className={clsx('flex', direction === 'vertical' && 'flex-col')}
@@ -77,7 +79,7 @@ const RadioGroup = ({
               </span>
               <span
                 className={clsx(
-                  'text-body2-regular',
+                  'dangol-typo-body2-regular',
                   option.disabled ? 'text-neutral-600' : 'text-neutral-800',
                 )}
               >

@@ -15,10 +15,8 @@ const SignUpAgreeCheckBoxLabel = ({ name }: Props) => {
   };
 
   return (
-    <span className="text-body3-medium text-neutral-600">
-      <strong className={required ? 'font-normal text-neutral-800' : ''}>
-        ({required ? '필수' : '선택'})
-      </strong>{' '}
+    <span className="dangol-typo-body3-medium text-neutral-600">
+      <strong className={required ? 'text-neutral-800' : ''}>({required ? '필수' : '선택'})</strong>{' '}
       {title[name]}
     </span>
   );

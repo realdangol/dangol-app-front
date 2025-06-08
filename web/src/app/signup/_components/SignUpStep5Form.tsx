@@ -1,13 +1,15 @@
 'use client';
 
 import { yupResolver } from '@hookform/resolvers/yup';
+import axios, { AxiosError } from 'axios';
 import React, { useState } from 'react';
-import type { Resolver } from 'react-hook-form';
+import type { Resolver, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
 import { Button, DaumPostCode, TextField } from '@/components';
 
+import { useSignUp } from '../_hooks';
 import type { SignUpStep5FormValues } from '../types';
 import SignUpSubmitButton from './SignUpSubmitButton';
 
@@ -17,10 +19,12 @@ const schema = yup.object().shape({
 });
 
 const SignUpStep5Form = () => {
+  const { formValues } = useSignUp();
   const {
     formState: { isValid },
     register,
     setValue,
+    handleSubmit,
   } = useForm<SignUpStep5FormValues>({
     defaultValues: {
       address: '',
@@ -30,8 +34,31 @@ const SignUpStep5Form = () => {
   });
   const [showPostCode, setShowPostCode] = useState(false);
 
+  const onValid: SubmitHandler<SignUpStep5FormValues> = async ({ address, detailedAddress }) => {
+    try {
+      const { marketingAgree, name, phone, gender, birthDate } = formValues;
+
+      await axios.post('/mock/signup', {
+        marketingAgree,
+        name,
+        phone,
+        gender,
+        birthDate,
+        address,
+        detailedAddress,
+      });
+    } catch (err) {
+      if (err instanceof AxiosError) {
+        switch (err.status) {
+          default:
+            break;
+        }
+      }
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(onValid)}>
       <div className="flex flex-col gap-1 px-4">
         <div className="flex items-end gap-2">
           <div className="flex-1">

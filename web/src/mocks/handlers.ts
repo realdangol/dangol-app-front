@@ -30,5 +30,12 @@ export const handlers = [
   }),
   http.post<any, SignUpFormValues>('/mock/signup', async ({ request }) => {
     const body = await request.json();
+
+    console.log(body);
+
+    return HttpResponse.json({
+      success: true,
+      message: '회원가입 성공',
+    });
   }),
 ];

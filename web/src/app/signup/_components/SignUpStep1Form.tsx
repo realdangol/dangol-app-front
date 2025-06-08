@@ -50,7 +50,7 @@ const SignUpStep1Form = () => {
       <div className="px-4">
         <div className="py-4 px-3 border border-neutral-300 rounded-xl">
           <CheckBox
-            label={<span className="text-body1-bold text-neutral-600">전체 동의</span>}
+            label={<span className="dangol-typo-body1-regular text-neutral-600">전체 동의</span>}
             checked={allAgreed}
             onChange={() => {
               const nextValue = !allAgreed;

@@ -9,7 +9,7 @@ const RootPage = () => {
   useEffect(() => {
     const hasVisited = localStorage.getItem('hasVisited');
 
-    router.replace(hasVisited ? '/login' : '/signup');
+    router.replace(hasVisited ? '/login' : '/onboarding');
   }, []);
 
   return null;

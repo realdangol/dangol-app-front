@@ -63,7 +63,7 @@ const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props>(
         {label && (
           <label
             htmlFor={inputProps?.id ?? defaultId}
-            className="typo-body1-medium text-neutral-500"
+            className="dangol-typo-body1-medium text-neutral-500"
           >
             {label}
           </label>
@@ -71,7 +71,7 @@ const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props>(
         <div
           className={twMerge(
             clsx(
-              'typo-body1-regular flex items-center gap-2 rounded border bg-white pr-3 text-neutral-800',
+              'dangol-typo-body1-regular flex items-center gap-2 rounded border bg-white pr-3 text-neutral-800',
               error ? 'border-error-600' : 'border-neutral-300',
               inputProps.disabled && 'cursor-not-allowed bg-neutral-100',
               !inputProps.readOnly && 'focus-within:border-brand-700',
@@ -113,13 +113,15 @@ const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props>(
           )}
         </div>
         {withLength && (
-          <p className={`${error ? 'text-error-600' : 'text-neutral-800'} typo-element3 self-end`}>
+          <p
+            className={`${error ? 'text-error-600' : 'text-neutral-800'} dangol-typo-element3 self-end`}
+          >
             {textLength}/{inputProps.maxLength}
           </p>
         )}
         {helperText?.value && (
           <p
-            className={`${error ? 'text-error-600' : (helperText?.color ?? 'text-neutral-800')} typo-element3`}
+            className={`${error ? 'text-error-600' : (helperText?.color ?? 'text-neutral-800')} dangol-typo-element3`}
           >
             {helperText.value}
           </p>

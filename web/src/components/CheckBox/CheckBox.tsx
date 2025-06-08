@@ -111,13 +111,16 @@ const Checkbox: React.FC<CheckboxProps> = ({
         onChange={handleChange}
       />
       <CheckBoxIcon checked={checked} disabled={disabled} />
-      {label && (
-        <span
-          className={`${disabled ? 'text-neutral-400' : 'text-neutral-800'} typo-body3-regular`}
-        >
-          {label}
-        </span>
-      )}
+      {label &&
+        (typeof label === 'string' ? (
+          <span
+            className={`${disabled ? 'text-neutral-400' : 'text-neutral-800'} dangol-typo-body3-regular`}
+          >
+            {label}
+          </span>
+        ) : (
+          label
+        ))}
     </label>
   );
 };
