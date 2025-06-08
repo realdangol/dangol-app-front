@@ -1,17 +1,10 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+import { Dialog, MSWProvider } from '@/components';
+import { DialogProvider } from '@/components/Dialog/DialogProvider';
+import { initMSW } from '@/mocks';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -23,11 +16,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  if (process.env.NODE_ENV === 'development') {
+    initMSW();
+  }
+
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="max-w-[480px] w-full h-dvh mx-auto px-4 flex flex-col items-center justify-center">
-          {children}
+      <body>
+        <div className="max-w-[480px] w-full h-dvh mx-auto flex flex-col items-center justify-center">
+          <MSWProvider>
+            <DialogProvider>
+              {children}
+              <Dialog />
+            </DialogProvider>
+          </MSWProvider>
         </div>
       </body>
     </html>
