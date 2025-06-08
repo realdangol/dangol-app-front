@@ -130,3 +130,9 @@
     font-weight: 600;
   }
 }
+
+@layer components {
+  .post-code-modal > div:last-child > div {
+    height: 100% !important;
+  }
+}

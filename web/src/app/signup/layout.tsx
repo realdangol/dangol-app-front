@@ -7,7 +7,7 @@ import { SignUpProvider } from './_components/SignUpProvider';
 const SignUpPageLayout = ({ children }: PropsWithChildren) => {
   return (
     <SignUpProvider>
-      <div className="w-full h-full">
+      <div className="relative w-full h-full">
         <SignUpHeader />
         <div className="pt-5 pb-10">
           <SignUpProgress />

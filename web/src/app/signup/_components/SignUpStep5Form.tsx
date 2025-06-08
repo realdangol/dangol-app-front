@@ -1,14 +1,12 @@
 'use client';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-import React from 'react';
-import type { Address } from 'react-daum-postcode';
-import { useDaumPostcodePopup } from 'react-daum-postcode';
+import React, { useState } from 'react';
 import type { Resolver } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
-import { Button, TextField } from '@/components';
+import { Button, DaumPostCode, TextField } from '@/components';
 
 import type { SignUpStep5FormValues } from '../types';
 import SignUpSubmitButton from './SignUpSubmitButton';
@@ -30,19 +28,7 @@ const SignUpStep5Form = () => {
     },
     resolver: yupResolver(schema) as Resolver<SignUpStep5FormValues>,
   });
-
-  const openDaumPostcodeModal = useDaumPostcodePopup();
-
-  const handleComplete = (address: Address) => {
-    setValue('address', address.address, { shouldValidate: true });
-  };
-
-  const handleSearchAddressClick = () => {
-    openDaumPostcodeModal({
-      popupTitle: '주소 검색',
-      onComplete: handleComplete,
-    });
-  };
+  const [showPostCode, setShowPostCode] = useState(false);
 
   return (
     <form>
@@ -60,7 +46,7 @@ const SignUpStep5Form = () => {
             type="button"
             className="w-[120px]"
             variant="outlinePrimary"
-            onClick={handleSearchAddressClick}
+            onClick={() => setShowPostCode(true)}
           >
             주소 검색
           </Button>
@@ -68,6 +54,15 @@ const SignUpStep5Form = () => {
         <TextField {...register('detailedAddress')} placeholder="상세주소를 입력해주세요." />
       </div>
       <SignUpSubmitButton disabled={!isValid} />
+      {showPostCode && (
+        <DaumPostCode
+          onClose={() => setShowPostCode(false)}
+          onSelected={({ address }) => {
+            setValue('address', address, { shouldValidate: true });
+            setShowPostCode(false);
+          }}
+        />
+      )}
     </form>
   );
 };
