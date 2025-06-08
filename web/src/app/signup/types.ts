@@ -1,3 +1,5 @@
+export type SignUpStep = 1 | 2 | 3 | 4 | 5 | 6;
+
 export type SignUpFormValues = {
   serviceAgree: boolean;
   smsAgree: boolean;

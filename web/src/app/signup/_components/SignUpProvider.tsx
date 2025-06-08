@@ -3,9 +3,7 @@
 import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
 import { createContext, useState } from 'react';
 
-import type { SignUpFormValues } from '../types';
-
-type SignUpStep = 1 | 2 | 3 | 4 | 5 | 6;
+import type { SignUpFormValues, SignUpStep } from '../types';
 
 type SignUpState = {
   step: SignUpStep;

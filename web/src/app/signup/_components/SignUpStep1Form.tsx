@@ -21,7 +21,7 @@ const schema = yup.object().shape({
 });
 
 const SignUpStep1Form = () => {
-  const { setStep, storeFormValues } = useSignUp();
+  const { formValues, setStep, storeFormValues } = useSignUp();
   const {
     control,
     formState: { isValid },
@@ -30,9 +30,9 @@ const SignUpStep1Form = () => {
     setValue,
   } = useForm<SignUpStep1FormValues>({
     defaultValues: {
-      serviceAgree: false,
-      smsAgree: false,
-      marketingAgree: false,
+      serviceAgree: formValues.serviceAgree || false,
+      smsAgree: formValues.smsAgree || false,
+      marketingAgree: formValues.marketingAgree || false,
     },
     resolver: yupResolver(schema),
   });
