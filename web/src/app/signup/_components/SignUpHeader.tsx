@@ -22,8 +22,8 @@ const SignUpHeader = () => {
   };
 
   return (
-    <header className="relative h-14 flex items-center justify-center">
-      <button type="button" className="absolute left-0" onClick={back}>
+    <header className="relative h-14 px-4 flex items-center justify-center">
+      <button type="button" className="absolute left-4" onClick={back}>
         <ArrowLeft color={colors.neutral800} />
       </button>
       <h1 className="text-[22px] font-bold leading-[24px] text-neutral-800">회원가입</h1>

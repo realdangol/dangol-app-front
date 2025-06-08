@@ -9,7 +9,7 @@ const SignUpProgress = () => {
   const { step } = useSignUp();
 
   return (
-    <div className="flex justify-between gap-2 w-full">
+    <div className="flex justify-between gap-2 w-full px-4">
       {Array.from({ length: 5 }).map((_, index) => (
         <span
           key={index}
