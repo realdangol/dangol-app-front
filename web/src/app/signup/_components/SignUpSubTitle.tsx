@@ -14,7 +14,11 @@ const SignUpSubTitle = () => {
     '주소를 알려주세요.',
   ];
 
-  return <h2 className="my-5 text-h1 whitespace-pre text-neutral-800">{subTitles[step - 1]}</h2>;
+  return (
+    <h2 className="my-5 text-h1 font-normal whitespace-pre text-neutral-800">
+      {subTitles[step - 1]}
+    </h2>
+  );
 };
 
 export default SignUpSubTitle;

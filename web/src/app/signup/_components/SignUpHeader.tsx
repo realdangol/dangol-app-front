@@ -15,7 +15,7 @@ const SignUpHeader = () => {
 
   const back = () => {
     if (step === 1) {
-      router.back();
+      router.replace('/login');
     } else {
       setStep((step - 1) as SignUpStep);
     }

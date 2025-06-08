@@ -1,7 +1,45 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
+
+import { RadioGroup } from '@/components';
+
+import { useSignUp } from '../_hooks';
+import SignUpSubmitButton from './SignUpSubmitButton';
 
 const SignUpStep3Form = () => {
-  return <div>SignUpStep3Form</div>;
+  const { formValues, setStep, storeFormValues } = useSignUp();
+  const [gender, setGender] = useState(formValues.gender);
+
+  const handleSubmit = () => {
+    setStep(4);
+    storeFormValues({
+      gender,
+    });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <RadioGroup
+        title="성별"
+        value={gender}
+        options={[
+          {
+            label: '여성',
+            value: 'female',
+          },
+          {
+            label: '남성',
+            value: 'male',
+          },
+        ]}
+        direction="horizontal"
+        gap={20}
+        onChange={(value) => setGender(value)}
+      />
+      <SignUpSubmitButton />
+    </form>
+  );
 };
 
 export default SignUpStep3Form;
