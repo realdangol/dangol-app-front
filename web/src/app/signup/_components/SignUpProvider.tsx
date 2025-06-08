@@ -15,7 +15,7 @@ type SignUpState = {
 const SignUpContext = createContext<SignUpState | null>(null);
 
 export const SignUpProvider = ({ children }: PropsWithChildren) => {
-  const [step, setStep] = useState<SignUpStep>(3);
+  const [step, setStep] = useState<SignUpStep>(4);
   const [formValues, setFormValues] = useState<SignUpFormValues>({
     serviceAgree: false,
     smsAgree: false,
@@ -24,6 +24,7 @@ export const SignUpProvider = ({ children }: PropsWithChildren) => {
     phone: '',
     isVerify: false,
     gender: 'female',
+    birthDate: '',
   });
 
   return (

@@ -8,6 +8,7 @@ export type SignUpFormValues = {
   phone: string;
   isVerify: boolean;
   gender: string;
+  birthDate: string;
 };
 
 export type SignUpStep1FormValues = Pick<
@@ -18,3 +19,5 @@ export type SignUpStep1FormValues = Pick<
 export type SignUpStep2FormValues = Pick<SignUpFormValues, 'name' | 'phone' | 'isVerify'> & {
   code: string;
 };
+
+export type SignUpStep4FormValues = Pick<SignUpFormValues, 'birthDate'>;
