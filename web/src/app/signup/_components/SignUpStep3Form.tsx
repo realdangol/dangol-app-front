@@ -20,23 +20,25 @@ const SignUpStep3Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <RadioGroup
-        title="성별"
-        value={gender}
-        options={[
-          {
-            label: '여성',
-            value: 'female',
-          },
-          {
-            label: '남성',
-            value: 'male',
-          },
-        ]}
-        direction="horizontal"
-        gap={20}
-        onChange={(value) => setGender(value)}
-      />
+      <div>
+        <RadioGroup
+          title="성별"
+          value={gender}
+          options={[
+            {
+              label: '여성',
+              value: 'female',
+            },
+            {
+              label: '남성',
+              value: 'male',
+            },
+          ]}
+          direction="horizontal"
+          gap={20}
+          onChange={(value) => setGender(value)}
+        />
+      </div>
       <SignUpSubmitButton />
     </form>
   );

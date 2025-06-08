@@ -8,7 +8,7 @@ export default function Page() {
     'Pretendard-Bold': require('../assets/fonts/Pretendard-Bold.otf'),
   });
   const [isLoading, setIsLoading] = useState(true);
-  const WEB_URL = 'http://192.168.0.9:3000';
+  const WEB_URL = 'http://localhost:3000';
 
   if (!fontsLoaded) return null;
 

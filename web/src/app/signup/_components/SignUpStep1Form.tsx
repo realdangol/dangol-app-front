@@ -47,23 +47,25 @@ const SignUpStep1Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onValid)} onKeyDown={preventSubmitByEnter}>
-      <div className="py-4 px-3 border border-neutral-300 rounded-xl">
-        <CheckBox
-          label={<span className="text-body1-bold text-neutral-600">전체 동의</span>}
-          checked={allAgreed}
-          onChange={() => {
-            const nextValue = !allAgreed;
+      <div>
+        <div className="py-4 px-3 border border-neutral-300 rounded-xl">
+          <CheckBox
+            label={<span className="text-body1-bold text-neutral-600">전체 동의</span>}
+            checked={allAgreed}
+            onChange={() => {
+              const nextValue = !allAgreed;
 
-            setValue('serviceAgree', nextValue, { shouldValidate: true });
-            setValue('smsAgree', nextValue, { shouldValidate: true });
-            setValue('marketingAgree', nextValue, { shouldValidate: true });
-          }}
-        />
-      </div>
-      <div className="flex flex-col gap-3 mt-4 px-3">
-        {agreeList.map((name) => (
-          <SignUpAgreeCheckBox key={name} name={name} control={control} />
-        ))}
+              setValue('serviceAgree', nextValue, { shouldValidate: true });
+              setValue('smsAgree', nextValue, { shouldValidate: true });
+              setValue('marketingAgree', nextValue, { shouldValidate: true });
+            }}
+          />
+        </div>
+        <div className="flex flex-col gap-3 mt-4 px-3">
+          {agreeList.map((name) => (
+            <SignUpAgreeCheckBox key={name} name={name} control={control} />
+          ))}
+        </div>
       </div>
       <SignUpSubmitButton disabled={!isValid} />
     </form>

@@ -48,15 +48,17 @@ const SignUpStep4Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onValid)} onKeyDown={preventSubmitByEnter}>
-      <TextField
-        {...register('birthDate', {
-          onChange: handleBirthDateChange,
-        })}
-        type="tel"
-        label="생년월일"
-        placeholder="생년월일을 입력해주세요."
-        maxLength={8}
-      />
+      <div>
+        <TextField
+          {...register('birthDate', {
+            onChange: handleBirthDateChange,
+          })}
+          type="tel"
+          label="생년월일"
+          placeholder="생년월일을 입력해주세요."
+          maxLength={8}
+        />
+      </div>
       <SignUpSubmitButton disabled={!isValid} />
     </form>
   );
