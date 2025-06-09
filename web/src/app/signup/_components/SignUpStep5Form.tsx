@@ -36,9 +36,11 @@ const SignUpStep5Form = () => {
 
   const onValid: SubmitHandler<SignUpStep5FormValues> = async ({ address, detailedAddress }) => {
     try {
-      const { marketingAgree, name, phone, gender, birthDate } = formValues;
+      const { provider, email, marketingAgree, name, phone, gender, birthDate } = formValues;
 
       await axios.post('/mock/signup', {
+        provider,
+        email,
         marketingAgree,
         name,
         phone,

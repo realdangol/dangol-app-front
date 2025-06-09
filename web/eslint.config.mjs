@@ -23,7 +23,7 @@ const eslintConfig = [
     },
   },
   {
-    ignores: ['src/mocks/*'],
+    ignores: ['src/mocks/*', 'src/**/*.d.ts'],
   },
 ];
 

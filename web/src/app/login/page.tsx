@@ -11,7 +11,7 @@ const LoginPage = () => {
   return (
     <>
       <Image src={LogoImage} alt={'찐단골 로고'} width={180} height={180} />
-      <div className="flex flex-col gap-4 mt-7 w-full">
+      <div className="flex flex-col gap-4 mt-7 w-full px-4">
         <OAuthSignInButton.Naver />
         <OAuthSignInButton.Kakao />
         <OAuthSignInButton.Apple />

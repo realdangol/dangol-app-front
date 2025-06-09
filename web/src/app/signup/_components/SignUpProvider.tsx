@@ -17,6 +17,8 @@ const SignUpContext = createContext<SignUpState | null>(null);
 export const SignUpProvider = ({ children }: PropsWithChildren) => {
   const [step, setStep] = useState<SignUpStep>(1);
   const [formValues, setFormValues] = useState<SignUpFormValues>({
+    provider: null,
+    email: '',
     serviceAgree: false,
     smsAgree: false,
     marketingAgree: false,
