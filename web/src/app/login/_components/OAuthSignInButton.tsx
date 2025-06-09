@@ -26,8 +26,14 @@ const OAuthSignInButtonWrapper = ({ children, className, onClick }: PropsWithChi
 };
 
 const Naver = () => {
+  const naverLogin = () => {
+    signIn('naver', {
+      callbackUrl: '/oauth/success/callback',
+    });
+  };
+
   return (
-    <OAuthSignInButtonWrapper className="bg-[#03C75A] text-white">
+    <OAuthSignInButtonWrapper className="bg-[#03C75A] text-white" onClick={naverLogin}>
       <svg
         width="38"
         height="38"

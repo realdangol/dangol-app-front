@@ -1,15 +1,26 @@
-import axios, { AxiosError } from 'axios';
-import { redirect } from 'next/navigation';
+'use client';
 
-const OauthSuccessCallbackPage = async () => {
-  try {
-    await axios.post('/mock/login');
-    redirect('/home');
-  } catch (error) {
-    if (error instanceof AxiosError) {
-      redirect('/signup');
-    }
-  }
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import { useEffect } from 'react';
+
+const OauthSuccessCallbackPage = () => {
+  const router = useRouter();
+  const { data: session } = useSession();
+
+  useEffect(() => {
+    axios
+      .post('/mock/login')
+      .then(() => {
+        router.replace('/home');
+      })
+      .catch(() => {
+        router.replace('/signup');
+      });
+  }, [session]);
+
+  return null;
 };
 
 export default OauthSuccessCallbackPage;
