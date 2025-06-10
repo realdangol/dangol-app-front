@@ -1,10 +1,14 @@
-import type { PropsWithChildren } from 'react';
+import type { ReactNode } from 'react';
 import React from 'react';
 
 import { SignUpHeader, SignUpProgress, SignUpSubTitle } from './_components';
 import { SignUpProvider } from './_components/SignUpProvider';
 
-const SignUpPageLayout = ({ children }: PropsWithChildren) => {
+type Props = {
+  children: ReactNode;
+};
+
+const SignUpPageLayout = ({ children }: Props) => {
   return (
     <SignUpProvider>
       <div className="relative w-full h-full">
