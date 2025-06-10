@@ -1,6 +1,6 @@
 'use client';
 
-import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
+import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import { createContext, useState } from 'react';
 
 import type { SignUpFormValues, SignUpStep } from '../types';
@@ -14,7 +14,11 @@ type SignUpState = {
 
 const SignUpContext = createContext<SignUpState | null>(null);
 
-export const SignUpProvider = ({ children }: PropsWithChildren) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const SignUpProvider = ({ children }: Props) => {
   const [step, setStep] = useState<SignUpStep>(1);
   const [formValues, setFormValues] = useState<SignUpFormValues>({
     provider: null,

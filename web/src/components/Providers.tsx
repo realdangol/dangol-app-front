@@ -2,7 +2,7 @@
 
 import { SessionProvider } from 'next-auth/react';
 import type { PropsWithChildren } from 'react';
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 
 import { initMSW } from '@/mocks';
 
@@ -18,10 +18,12 @@ const Providers = ({ children }: PropsWithChildren) => {
 
   return (
     <SessionProvider>
-      <DialogProvider>
-        {children}
-        <DialogRenderer />
-      </DialogProvider>
+      <Suspense>
+        <DialogProvider>
+          {children}
+          <DialogRenderer />
+        </DialogProvider>
+      </Suspense>
     </SessionProvider>
   );
 };
