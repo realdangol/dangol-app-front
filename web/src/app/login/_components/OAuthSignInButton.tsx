@@ -139,12 +139,16 @@ const Apple = () => {
 };
 
 const Google = () => {
-  const handleClick = () => {};
+  const googleLogin = () => {
+    signIn('google', {
+      callbackUrl: '/oauth/success/callback',
+    });
+  };
 
   return (
     <OAuthSignInButtonWrapper
       className="bg-white text-neutral-800 border border-neutral-100"
-      onClick={handleClick}
+      onClick={googleLogin}
     >
       <svg
         width="38"

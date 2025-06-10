@@ -10,15 +10,17 @@ const OauthSuccessCallbackPage = () => {
   const { data: session } = useSession();
 
   useEffect(() => {
-    axios
-      .post('/mock/login')
-      .then(() => {
-        router.replace('/home');
-      })
-      .catch(() => {
-        router.replace('/signup');
-      });
-  }, [session]);
+    if (session) {
+      axios
+        .post('/mock/login', { email: session.user.email })
+        .then(() => {
+          router.replace('/home');
+        })
+        .catch(() => {
+          router.replace('/signup');
+        });
+    }
+  }, [session, router]);
 
   return null;
 };
