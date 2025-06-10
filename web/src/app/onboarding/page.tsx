@@ -38,7 +38,7 @@ const slides = [
 
 const OnboardingPage = () => {
   return (
-    <main className="relative">
+    <main className="relative w-full h-dvh">
       <Swiper
         className="w-[210px] h-full"
         modules={[Pagination]}
@@ -53,17 +53,17 @@ const OnboardingPage = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.title}>
             <div className="h-full flex flex-col justify-center items-center p-5">
-              <h1 className="text-h text-neutral-800">{slide.title}</h1>
-              <p className="text-body3-regular text-center mt-5 mb-8 text-neutral-500 whitespace-pre">
+              <h1 className="dangol-typo-h text-neutral-800">{slide.title}</h1>
+              <p className="dangol-typo-body3-regular text-center mt-5 mb-8 text-neutral-500 whitespace-pre">
                 {slide.description}
               </p>
-              <Image src={slide.image} alt={slide.title} />
+              <Image src={slide.image} alt={slide.title} loading="eager" />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
       <div className="absolute bottom-10 z-1 w-full flex justify-center">
-        <Link className="w-[85vw]" href={'/login'}>
+        <Link className="w-[85%]" href={'/login'}>
           <Button className="w-full">로그인</Button>
         </Link>
       </div>

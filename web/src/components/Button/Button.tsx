@@ -19,7 +19,7 @@ const Button = ({
   ...restProps
 }: Props) => {
   const base =
-    'relative flex items-center justify-center gap-1 typo-body1-medium overflow-hidden disabled:cursor-not-allowed';
+    'relative flex items-center justify-center gap-1 dangol-typo-body1-medium overflow-hidden disabled:cursor-not-allowed';
 
   const variantClass = {
     fillPrimary: 'bg-brand-700 text-white disabled:bg-brand-400 hover:bg-[#D27047]',
