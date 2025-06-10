@@ -1,5 +1,2 @@
 # dependencies
 node_modules/
-
-# npm 설정
-.npmrc
