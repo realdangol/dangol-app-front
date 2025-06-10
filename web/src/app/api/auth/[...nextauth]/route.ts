@@ -5,7 +5,7 @@ import GoogleProvider from 'next-auth/providers/google';
 import KakaoProvider from 'next-auth/providers/kakao';
 import NaverProvider from 'next-auth/providers/naver';
 
-export const authOptions: AuthOptions = {
+const authOptions: AuthOptions = {
   providers: [
     NaverProvider({
       clientId: process.env.NAVER_ID as string,
