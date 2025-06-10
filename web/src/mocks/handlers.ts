@@ -38,4 +38,17 @@ export const handlers = [
       message: '회원가입 성공',
     });
   }),
+  http.post<any, { email: string }>('/mock/login', async ({ request }) => {
+    const { email } = await request.json();
+
+    if (email === 'skdisk7368@gmail.com') {
+      // 이미 가입된 계정
+      return new HttpResponse(null, { status: 409 });
+    } else {
+      return HttpResponse.json({
+        success: true,
+        message: '로그인 성공',
+      });
+    }
+  }),
 ];

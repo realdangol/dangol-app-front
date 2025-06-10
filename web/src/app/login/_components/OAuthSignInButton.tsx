@@ -1,20 +1,24 @@
 'use client';
 
 import clsx from 'clsx';
+import { signIn } from 'next-auth/react';
 import type { PropsWithChildren } from 'react';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-const OAuthSignInButtonWrapper = ({
-  children,
-  className,
-}: PropsWithChildren<{ className?: string }>) => {
+type Props = {
+  className?: string;
+  onClick?: () => void;
+};
+
+const OAuthSignInButtonWrapper = ({ children, className, onClick }: PropsWithChildren<Props>) => {
   return (
     <button
       className={twMerge(
         clsx('h-12 rounded-lg flex items-center justify-center dangol-typo-element3', className),
       )}
       type="button"
+      onClick={onClick}
     >
       {children}
     </button>
@@ -22,8 +26,14 @@ const OAuthSignInButtonWrapper = ({
 };
 
 const Naver = () => {
+  const naverLogin = () => {
+    signIn('naver', {
+      callbackUrl: '/oauth/success/callback',
+    });
+  };
+
   return (
-    <OAuthSignInButtonWrapper className="bg-[#03C75A] text-white">
+    <OAuthSignInButtonWrapper className="bg-[#03C75A] text-white" onClick={naverLogin}>
       <svg
         width="38"
         height="38"
@@ -50,8 +60,14 @@ const Naver = () => {
 };
 
 const Kakao = () => {
+  const kakaoLogin = () => {
+    signIn('kakao', {
+      callbackUrl: '/oauth/success/callback',
+    });
+  };
+
   return (
-    <OAuthSignInButtonWrapper className="bg-[#FEE500] text-[#1D1E1E]">
+    <OAuthSignInButtonWrapper className="bg-[#FEE500] text-[#1D1E1E]" onClick={kakaoLogin}>
       <svg
         width="38"
         height="38"
@@ -123,8 +139,17 @@ const Apple = () => {
 };
 
 const Google = () => {
+  const googleLogin = () => {
+    signIn('google', {
+      callbackUrl: '/oauth/success/callback',
+    });
+  };
+
   return (
-    <OAuthSignInButtonWrapper className="bg-white text-neutral-800 border border-neutral-100">
+    <OAuthSignInButtonWrapper
+      className="bg-white text-neutral-800 border border-neutral-100"
+      onClick={googleLogin}
+    >
       <svg
         width="38"
         height="38"

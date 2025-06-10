@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import { useSession } from 'next-auth/react';
+import React, { useEffect } from 'react';
 
 import {
   SignUpStep1Form,
@@ -12,7 +13,19 @@ import {
 import { useSignUp } from './_hooks';
 
 const SignUpPage = () => {
-  const { step } = useSignUp();
+  const { step, storeFormValues } = useSignUp();
+  const { data: session } = useSession();
+
+  console.log(session);
+
+  useEffect(() => {
+    if (session) {
+      storeFormValues({
+        provider: session.user.provider,
+        email: session.user.email,
+      });
+    }
+  }, [session]);
 
   switch (step) {
     case 1:
