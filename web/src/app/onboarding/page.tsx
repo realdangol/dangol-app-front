@@ -15,7 +15,7 @@ import OnboardingImage1 from '@/public/images/onboarding/onboarding1.png';
 
 const slides = [
   {
-    title: '기억나시나요? 11',
+    title: '기억나시나요?',
     description: '전단지에 있는 번호로 배달주문 하고\n쿠폰 모아 냉장고에 붙이던\n그 때 그 시절',
     image: OnboardingImage1,
   },
