@@ -6,11 +6,12 @@ import './styles.css';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Button } from '@/components';
+import { LOCAL_STORAGE_HAS_VISITED } from '@/constants/storage';
 import OnboardingImage1 from '@/public/images/onboarding/onboarding1.png';
 
 const slides = [
@@ -37,6 +38,12 @@ const slides = [
 ];
 
 const OnboardingPage = () => {
+  useEffect(() => {
+    return () => {
+      localStorage.setItem(LOCAL_STORAGE_HAS_VISITED, 'true');
+    };
+  }, []);
+
   return (
     <main className="relative w-full h-dvh">
       <Swiper
