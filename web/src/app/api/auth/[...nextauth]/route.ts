@@ -1,6 +1,5 @@
 import type { AuthOptions } from 'next-auth';
 import NextAuth from 'next-auth';
-import AppleProvider from 'next-auth/providers/apple';
 import GoogleProvider from 'next-auth/providers/google';
 import KakaoProvider from 'next-auth/providers/kakao';
 import NaverProvider from 'next-auth/providers/naver';
@@ -14,10 +13,6 @@ const authOptions: AuthOptions = {
     KakaoProvider({
       clientId: process.env.KAKAO_ID as string,
       clientSecret: process.env.KAKAO_SECRET as string,
-    }),
-    AppleProvider({
-      clientId: process.env.APPLE_ID as string,
-      clientSecret: process.env.APPLE_SECRET as string,
     }),
     GoogleProvider({
       clientId: process.env.GOOGLE_ID as string,
