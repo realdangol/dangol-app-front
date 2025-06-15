@@ -1,12 +1,12 @@
 'use client';
 
 import { yupResolver } from '@hookform/resolvers/yup';
+import { CheckBox } from '@realdangol/jjindangol-ui';
 import React from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
-import { CheckBox } from '@/components';
 import preventSubmitByEnter from '@/utils/preventSubmitByEnter';
 
 import { useSignUp } from '../_hooks';

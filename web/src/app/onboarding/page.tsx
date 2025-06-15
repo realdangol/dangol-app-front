@@ -4,13 +4,13 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './styles.css';
 
+import { Button } from '@realdangol/jjindangol-ui';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Button } from '@/components';
 import { LOCAL_STORAGE_HAS_VISITED } from '@/constants/storage';
 import OnboardingImage1 from '@/public/images/onboarding/onboarding1.png';
 
@@ -47,7 +47,7 @@ const OnboardingPage = () => {
   return (
     <main className="relative w-full h-dvh">
       <Swiper
-        className="w-[210px] h-full"
+        className="w-[280px] h-full"
         modules={[Pagination]}
         pagination={{
           el: '#containerForBullets',
@@ -69,7 +69,7 @@ const OnboardingPage = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="absolute bottom-10 z-1 w-full flex justify-center">
+      <div className="absolute bottom-10 z-[100] w-full flex justify-center">
         <Link className="w-[85%]" href={'/login'}>
           <Button className="w-full">로그인</Button>
         </Link>

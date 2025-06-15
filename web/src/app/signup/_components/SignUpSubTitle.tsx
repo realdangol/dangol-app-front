@@ -15,7 +15,7 @@ const SignUpSubTitle = () => {
   ];
 
   return (
-    <h2 className="my-5 px-4 dangol-typo-h1 font-normal whitespace-pre text-neutral-800">
+    <h2 className="my-5 px-4 typo-h1 font-normal whitespace-pre text-neutral-800">
       {subTitles[step - 1]}
     </h2>
   );

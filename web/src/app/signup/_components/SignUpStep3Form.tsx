@@ -1,8 +1,7 @@
 'use client';
 
+import { RadioGroup } from '@realdangol/jjindangol-ui';
 import React, { useState } from 'react';
-
-import { RadioGroup } from '@/components';
 
 import { useSignUp } from '../_hooks';
 import SignUpSubmitButton from './SignUpSubmitButton';

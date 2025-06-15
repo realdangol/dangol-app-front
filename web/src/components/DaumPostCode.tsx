@@ -2,9 +2,8 @@
 
 import Postcode from '@actbase/react-daum-postcode';
 import type { OnCompleteParams } from '@actbase/react-daum-postcode/lib/types';
+import { X } from '@realdangol/jjindangol-ui';
 import React from 'react';
-
-import { X } from './Icon';
 
 type Props = {
   onSelected: (address: OnCompleteParams) => void;

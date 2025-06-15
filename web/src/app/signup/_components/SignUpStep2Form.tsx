@@ -1,6 +1,7 @@
 'use client';
 
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Button, TextField } from '@realdangol/jjindangol-ui';
 import axios, { AxiosError } from 'axios';
 import clsx from 'clsx';
 import type { ChangeEvent } from 'react';
@@ -9,7 +10,7 @@ import type { Resolver, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
-import { Button, TextField, Timer } from '@/components';
+import { Timer } from '@/components';
 import useDialog from '@/components/Dialog/useDialog';
 import handleOnlyNumberChange from '@/utils/handleOnlyNumberChange';
 

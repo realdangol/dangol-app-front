@@ -1,9 +1,9 @@
 'use client';
 
+import { ArrowLeft } from '@realdangol/jjindangol-ui';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-import { ArrowLeft } from '@/components/Icon';
 import colors from '@/constants/colors';
 
 import { useSignUp } from '../_hooks';

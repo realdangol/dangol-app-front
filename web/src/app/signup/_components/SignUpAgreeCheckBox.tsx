@@ -1,10 +1,9 @@
 'use client';
 
+import { CheckBox } from '@realdangol/jjindangol-ui';
 import React from 'react';
 import type { Control } from 'react-hook-form';
 import { useController } from 'react-hook-form';
-
-import { CheckBox } from '@/components';
 
 import type { SignUpStep1FormValues } from '../types';
 import SignUpAgreeCheckBoxLabel from './SignUpAgreeCheckBoxLabel';
