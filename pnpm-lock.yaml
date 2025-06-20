@@ -146,8 +146,8 @@ importers:
         specifier: ^5.0.1
         version: 5.1.1(react-hook-form@7.57.0(react@18.3.1))
       '@realdangol/jjindangol-ui':
-        specifier: 1.0.1
-        version: 1.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.0.2
+        version: 1.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       axios:
         specifier: ^1.9.0
         version: 1.9.0
@@ -1635,8 +1635,8 @@ packages:
   '@react-navigation/routers@7.4.0':
     resolution: {integrity: sha512-th5THnuWKJlmr7GGHiicy979di11ycDWub9iIXbEDvQwmwmsRzppmVbfs2nD8bC/MgyMgqWu/gxfys+HqN+kcw==}
 
-  '@realdangol/jjindangol-ui@1.0.1':
-    resolution: {integrity: sha512-fcVkyUXdWRdnOhT4ZK5h+9a7KcdM6pNPLSaZQbrie9kgUDAKKgL10RbRCqvIpXBW8UIqbI0f/D8ZD3Rwhet8Mg==, tarball: https://npm.pkg.github.com/download/@realdangol/jjindangol-ui/1.0.1/7fba9d0ac3f9c0e30dfad051d725a4563f668a79}
+  '@realdangol/jjindangol-ui@1.0.2':
+    resolution: {integrity: sha512-OeBkiQztaWLBREFDeNN7JWdXWb0HMJfCdXQIVPP4qPR+bwLs6/aqpmIMu4LO71WeC9pAGRBmOr/5s9h6+KZuaA==, tarball: https://npm.pkg.github.com/download/@realdangol/jjindangol-ui/1.0.2/aba3a69c8a74f72808eec616d5af3b14e42bb023}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -8365,7 +8365,7 @@ snapshots:
     dependencies:
       nanoid: 3.3.11
 
-  '@realdangol/jjindangol-ui@1.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@realdangol/jjindangol-ui@1.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)

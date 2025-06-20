@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, Notification } from '@realdangol/jjindangol-ui';
+import { ArrowRight, DiscountCouponFilled } from '@realdangol/jjindangol-ui';
 import React from 'react';
 
 const EventButton = () => {
@@ -9,7 +9,7 @@ const EventButton = () => {
       <div className="py-2.5 px-4 flex justify-between border border-brand-200 rounded-lg">
         <div className="flex items-center gap-3">
           <span className="inline-block w-[28px] h-[28px] flex items-center justify-center bg-brand-200 text-brand-700 rounded-full">
-            <Notification size="16" />
+            <DiscountCouponFilled size="16" />
           </span>
           <strong className="typo-element3">사장님이 이벤트 중!</strong>
         </div>
