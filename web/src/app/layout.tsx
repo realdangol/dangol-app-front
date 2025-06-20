@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="max-w-[480px] w-full h-dvh mx-auto flex flex-col items-center justify-center">
+        <div className="max-w-[480px] w-full h-dvh mx-auto flex flex-col items-center">
           <Providers>{children}</Providers>
         </div>
       </body>

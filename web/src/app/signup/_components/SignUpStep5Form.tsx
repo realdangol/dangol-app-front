@@ -1,13 +1,14 @@
 'use client';
 
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Button, TextField } from '@realdangol/jjindangol-ui';
 import axios, { AxiosError } from 'axios';
 import React, { useState } from 'react';
 import type { Resolver, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
-import { Button, DaumPostCode, TextField } from '@/components';
+import { DaumPostCode } from '@/components';
 
 import { useSignUp } from '../_hooks';
 import type { SignUpStep5FormValues } from '../types';

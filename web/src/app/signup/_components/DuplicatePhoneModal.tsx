@@ -1,8 +1,9 @@
+'use client';
+
+import { AlertCircle, Button } from '@realdangol/jjindangol-ui';
 import React from 'react';
 
-import { Button } from '@/components';
 import useDialog from '@/components/Dialog/useDialog';
-import { AlertCircle } from '@/components/Icon';
 import colors from '@/constants/colors';
 
 const DuplicatePhoneModal = () => {

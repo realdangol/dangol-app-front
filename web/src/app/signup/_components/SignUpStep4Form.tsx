@@ -1,13 +1,13 @@
 'use client';
 
 import { yupResolver } from '@hookform/resolvers/yup';
+import { TextField } from '@realdangol/jjindangol-ui';
 import type { ChangeEvent } from 'react';
 import React from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
-import { TextField } from '@/components';
 import handleOnlyNumberChange from '@/utils/handleOnlyNumberChange';
 import preventSubmitByEnter from '@/utils/preventSubmitByEnter';
 

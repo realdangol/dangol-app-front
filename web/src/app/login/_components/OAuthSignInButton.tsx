@@ -5,20 +5,27 @@ import { signIn } from 'next-auth/react';
 import type { PropsWithChildren } from 'react';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
+import type { DangolOauthProvider } from 'types/auth';
 
 type Props = {
+  provider: DangolOauthProvider;
   className?: string;
   onClick?: () => void;
 };
 
-const OAuthSignInButtonWrapper = ({ children, className, onClick }: PropsWithChildren<Props>) => {
+const OAuthSignInButtonWrapper = ({ children, className, provider }: PropsWithChildren<Props>) => {
+  const loginWithProvider = () => {
+    signIn(provider, { callbackUrl: '/oauth/success/callback' });
+  };
+
   return (
     <button
       className={twMerge(
         clsx('h-12 rounded-lg flex items-center justify-center dangol-typo-element3', className),
       )}
       type="button"
-      onClick={onClick}
+      aria-label={`${provider} 계정으로 로그인`}
+      onClick={loginWithProvider}
     >
       {children}
     </button>
@@ -26,20 +33,15 @@ const OAuthSignInButtonWrapper = ({ children, className, onClick }: PropsWithChi
 };
 
 const Naver = () => {
-  const naverLogin = () => {
-    signIn('naver', {
-      callbackUrl: '/oauth/success/callback',
-    });
-  };
-
   return (
-    <OAuthSignInButtonWrapper className="bg-[#03C75A] text-white" onClick={naverLogin}>
+    <OAuthSignInButtonWrapper className="bg-[#03C75A] text-white" provider="naver">
       <svg
         width="38"
         height="38"
         viewBox="0 0 38 38"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
       >
         <rect width="38" height="38" rx="19" fill="#03C75A" />
         <g clipPath="url(#clip0_2043_10347)">
@@ -60,20 +62,15 @@ const Naver = () => {
 };
 
 const Kakao = () => {
-  const kakaoLogin = () => {
-    signIn('kakao', {
-      callbackUrl: '/oauth/success/callback',
-    });
-  };
-
   return (
-    <OAuthSignInButtonWrapper className="bg-[#FEE500] text-[#1D1E1E]" onClick={kakaoLogin}>
+    <OAuthSignInButtonWrapper className="bg-[#FEE500] text-[#1D1E1E]" provider="kakao">
       <svg
         width="38"
         height="38"
         viewBox="0 0 38 38"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
       >
         <circle cx="19" cy="19" r="19" fill="#FEE500" />
         <path
@@ -102,94 +99,9 @@ const Kakao = () => {
   );
 };
 
-const Apple = () => {
-  return (
-    <OAuthSignInButtonWrapper className="bg-black text-white">
-      <svg
-        width="38"
-        height="38"
-        viewBox="0 0 38 38"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
-        <circle cx="19" cy="19" r="19" fill="url(#pattern0_2043_10360)" />
-        <circle cx="19" cy="19" r="18.5" stroke="black" strokeOpacity="0.05" />
-        <defs>
-          <pattern
-            id="pattern0_2043_10360"
-            patternContentUnits="objectBoundingBox"
-            width="1"
-            height="1"
-          >
-            <use xlinkHref="#image0_2043_10360" transform="scale(0.00757576)" />
-          </pattern>
-          <image
-            id="image0_2043_10360"
-            width="132"
-            height="132"
-            preserveAspectRatio="none"
-            xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAIAAADeJhTwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFFGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDggNzkuMTY0MDM2LCAyMDE5LzA4LzEzLTAxOjA2OjU3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTktMTItMTVUMjM6MTQ6MjMtMDg6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIwLTAxLTEzVDE3OjM3LTA4OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTAxLTEzVDE3OjM3LTA4OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmNmNWZhMWIwLTEzOGItNDhhOC05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"
-          />
-        </defs>
-      </svg>
-      Apple 계정으로 시작하기
-    </OAuthSignInButtonWrapper>
-  );
-};
-
-const Google = () => {
-  const googleLogin = () => {
-    signIn('google', {
-      callbackUrl: '/oauth/success/callback',
-    });
-  };
-
-  return (
-    <OAuthSignInButtonWrapper
-      className="bg-white text-neutral-800 border border-neutral-100"
-      onClick={googleLogin}
-    >
-      <svg
-        width="38"
-        height="38"
-        viewBox="0 0 38 38"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
-        <circle cx="19" cy="19" r="19" fill="url(#pattern0_2043_10362)" />
-        <defs>
-          <pattern
-            id="pattern0_2043_10362"
-            patternContentUnits="objectBoundingBox"
-            width="1"
-            height="1"
-          >
-            <use
-              xlinkHref="#image0_2043_10362"
-              transform="translate(-0.142857 -0.142857) scale(0.00892857)"
-            />
-          </pattern>
-          <image
-            id="image0_2043_10362"
-            width="144"
-            height="144"
-            preserveAspectRatio="none"
-            xlinkHref="data:image/png;base64,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"
-          />
-        </defs>
-      </svg>
-      구글 계정으로 시작하기
-    </OAuthSignInButtonWrapper>
-  );
-};
-
 const OAuthSignInButton = {
   Naver,
   Kakao,
-  Apple,
-  Google,
 };
 
 export default OAuthSignInButton;

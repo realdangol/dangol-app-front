@@ -1,8 +1,7 @@
 'use client';
 
+import { Button } from '@realdangol/jjindangol-ui';
 import React from 'react';
-
-import { Button } from '@/components';
 
 type Props = {
   disabled?: boolean;
