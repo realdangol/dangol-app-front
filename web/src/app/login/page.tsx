@@ -14,7 +14,6 @@ const LoginPage = () => {
       <div className="flex flex-col gap-4 mt-7 w-full px-4">
         <OAuthSignInButton.Naver />
         <OAuthSignInButton.Kakao />
-        <OAuthSignInButton.Google />
       </div>
     </>
   );

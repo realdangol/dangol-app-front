@@ -12,10 +12,23 @@ const menus = {
       name: '된장찌개',
       price: 12000,
     },
+    {
+      name: '김치찌개',
+      price: 12000,
+    },
+    {
+      name: '육회 비빔밥',
+      price: 12000,
+      largePrice: 14000,
+    },
   ],
   side: [
     {
       name: '물냉면',
+      price: 7000,
+    },
+    {
+      name: '만두',
       price: 7000,
     },
   ],
