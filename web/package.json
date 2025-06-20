@@ -18,7 +18,7 @@
   "dependencies": {
     "@actbase/react-daum-postcode": "^1.0.4",
     "@hookform/resolvers": "^5.0.1",
-    "@realdangol/jjindangol-ui": "1.0.1",
+    "@realdangol/jjindangol-ui": "1.0.2",
     "axios": "^1.9.0",
     "clsx": "^2.1.1",
     "next": "15.3.0",

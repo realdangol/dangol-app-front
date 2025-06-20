@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Notification } from '@realdangol/jjindangol-ui';
+import { Button, NotificationFilled } from '@realdangol/jjindangol-ui';
 import Image from 'next/image';
 import React from 'react';
 
@@ -21,7 +21,7 @@ const Flyer = () => {
           <span className="typo-body1-medium text-neutral-800">매장명</span>
         </div>
         <button type="button">
-          <Notification color={colors.brand700} />
+          <NotificationFilled color={colors.brand700} />
         </button>
       </div>
       <div className="flex">
