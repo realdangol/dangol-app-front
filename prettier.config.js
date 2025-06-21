@@ -1,3 +1,3 @@
 module.exports = {
-  ...require('@dangol-dev/front-prettier-config'),
+  ...require('@realdangol/front-prettier-config'),
 };
