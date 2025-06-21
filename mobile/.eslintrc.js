@@ -1,6 +1,6 @@
 module.exports = {
-  plugins: ['@dangol-dev'],
-  extends: ['expo', 'plugin:@dangol-dev/recommended'],
+  plugins: ['@realdangol'],
+  extends: ['expo', 'plugin:@realdangol/recommended'],
   ignorePatterns: ['/dist/*'],
   rules: {
     '@typescript-eslint/no-require-imports': 'off',

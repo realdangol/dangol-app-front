@@ -17,9 +17,9 @@
   "license": "ISC",
   "packageManager": "pnpm@10.8.0",
   "devDependencies": {
-    "@dangol-dev/eslint-plugin": "1.0.0",
-    "@dangol-dev/front-prettier-config": "1.0.0",
-    "@dangol-dev/front-ts-config": "1.0.1",
+    "@realdangol/eslint-plugin": "1.0.0",
+    "@realdangol/front-prettier-config": "1.0.0",
+    "@realdangol/front-ts-config": "1.0.0",
     "@types/react": "18.3.12",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",

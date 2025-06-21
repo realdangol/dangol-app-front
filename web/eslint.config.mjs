@@ -1,7 +1,7 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
-import dangolPlugin from '@dangol-dev/eslint-plugin';
+import dangolPlugin from '@realdangol/eslint-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -10,7 +10,7 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: {},
   plugins: {
-    '@dangol-dev': dangolPlugin,
+    '@realdangol': dangolPlugin,
   },
 });
 
