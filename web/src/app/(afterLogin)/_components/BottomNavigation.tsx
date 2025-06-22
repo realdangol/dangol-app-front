@@ -2,9 +2,14 @@
 
 import { CheckList, MyPage, Notification, Shop } from '@realdangol/jjindangol-ui';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const BottomNavigation = () => {
+  const pathname = usePathname();
+
+  if (['/cart'].includes(pathname)) return null;
+
   const items = [
     {
       name: '단골집',

@@ -39,12 +39,12 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [ -z "$TARGET_SUBDIR" ]; then
-  echo "❌ 설치 위치를 지정하세요. (-root, -web, -mobile)"
+  echo "설치 위치를 지정하세요. (-root, -web, -mobile)"
   exit 1
 fi
 
 if [ ${#PACKAGES[@]} -eq 0 ]; then
-  echo "❌ 설치할 패키지를 지정하세요."
+  echo "설치할 패키지를 지정하세요."
   exit 1
 fi
 
@@ -58,7 +58,7 @@ echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > "$ROOT_DIR/.npmrc"
 echo "@$GITHUB_USERNAME:registry=https://npm.pkg.github.com/" >> "$ROOT_DIR/.npmrc"
 echo "always-auth=true" >> "$ROOT_DIR/.npmrc"
 
-echo "📦 설치 경로: $TARGET_DIR"
+echo "설치 경로: $TARGET_DIR"
 cd "$TARGET_DIR" || exit 1
 
 if [ "$IS_DEV" = true ]; then
