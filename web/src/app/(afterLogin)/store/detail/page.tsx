@@ -8,6 +8,7 @@ import {
   LikeButton,
   MenuList,
   MenuTab,
+  StoreDetailBottomFixed,
   StoreDetailHeader,
   StoreDetailTab,
   StoreInfoButton,
@@ -23,7 +24,7 @@ const StorePage = () => {
     <>
       <StoreDetailHeader isTransparent={inView} />
       <main className="w-full min-h-full">
-        <div className="pb-[70px]">
+        <div className="pb-[200px]">
           <div ref={thumbnailRef}>
             <StoreThumbnails />
           </div>
@@ -47,6 +48,7 @@ const StorePage = () => {
           </div>
         </div>
       </main>
+      <StoreDetailBottomFixed />
     </>
   );
 };
