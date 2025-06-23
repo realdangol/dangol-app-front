@@ -3,7 +3,7 @@ import React from 'react';
 
 const StoreDetailBottomFixed = () => {
   return (
-    <div className="fixed bottom-[60px] left-0 right-0 z-[1000]">
+    <div className="fixed bottom-[60px] left-0 right-0 z-[100]">
       <div className="max-w-[480px] h-[66px] mx-auto shadow-[0px_0px_2px_0px_#0000001F] shadow-[0px_0px_8px_0px_#0000001A] bg-white px-m flex justify-between items-center rounded-t-lg">
         <div className="flex flex-col gap-1">
           <span className="typo-body1-bold text-neutral-800">21,500원</span>
