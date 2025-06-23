@@ -37,7 +37,7 @@ const BottomNavigation = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 z-[100] w-screen h-[60px] bg-white">
+    <nav className="fixed bottom-0 z-[1000] w-screen h-[60px] bg-white">
       <div className="max-w-[480px] h-full mx-auto flex shadow-[0px_0px_2px_0px_#0000001F] shadow-[0px_0px_8px_0px_#0000001A]">
         {items.map((item) => (
           <Link

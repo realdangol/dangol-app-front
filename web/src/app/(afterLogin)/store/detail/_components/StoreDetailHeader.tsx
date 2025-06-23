@@ -3,16 +3,14 @@
 import { ArrowLeft, ShoppingCart } from '@realdangol/jjindangol-ui';
 import clsx from 'clsx';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import React from 'react';
 
 type Props = {
   isTransparent: boolean;
+  onBackClick?: () => void;
 };
 
-const StoreDetailHeader = ({ isTransparent }: Props) => {
-  const router = useRouter();
-
+const StoreDetailHeader = ({ isTransparent, onBackClick }: Props) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-[100]">
       <div
@@ -21,10 +19,10 @@ const StoreDetailHeader = ({ isTransparent }: Props) => {
           isTransparent ? 'text-white bg-transparent' : 'text-neutral-800 bg-white',
         )}
       >
-        <button type="button" onClick={router.back}>
+        <button type="button" onClick={onBackClick}>
           <ArrowLeft />
         </button>
-        <Link href="/cart">
+        <Link href={'/cart'}>
           <ShoppingCart />
         </Link>
       </div>

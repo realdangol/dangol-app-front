@@ -146,8 +146,8 @@ importers:
         specifier: ^5.0.1
         version: 5.1.1(react-hook-form@7.58.1(react@18.3.1))
       '@realdangol/jjindangol-ui':
-        specifier: 1.0.2
-        version: 1.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.0.3
+        version: 1.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       axios:
         specifier: ^1.9.0
         version: 1.10.0
@@ -178,12 +178,18 @@ importers:
       tailwind-merge:
         specifier: ^3.3.0
         version: 3.3.1
+      tailwind-scrollbar-hide:
+        specifier: ^4.0.0
+        version: 4.0.0(tailwindcss@3.4.17)
       uuid:
         specifier: ^11.1.0
         version: 11.1.0
       yup:
         specifier: ^1.6.1
         version: 1.6.1
+      zustand:
+        specifier: ^5.0.5
+        version: 5.0.5(@types/react@18.3.12)(react@18.3.1)(use-sync-external-store@1.5.0(react@18.3.1))
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
@@ -1028,7 +1034,7 @@ packages:
 
   '@expo/bunyan@4.0.1':
     resolution: {integrity: sha512-+Lla7nYSiHZirgK+U/uYzsLv/X+HaJienbD5AKX1UQZHYfWaP+9uuQluRB4GrEVWF0GZ7vEVp/jzaOT9k/SQlg==}
-    engines: {'0': node >=0.10.0}
+    engines: {node: '>=0.10.0'}
 
   '@expo/cli@0.22.26':
     resolution: {integrity: sha512-I689wc8Fn/AX7aUGiwrh3HnssiORMJtR2fpksX+JIe8Cj/EDleblYMSwRPd0025wrwOV9UN1KM/RuEt/QjCS3Q==}
@@ -1648,8 +1654,8 @@ packages:
     peerDependencies:
       typescript: ^5.0.0
 
-  '@realdangol/jjindangol-ui@1.0.2':
-    resolution: {integrity: sha512-OeBkiQztaWLBREFDeNN7JWdXWb0HMJfCdXQIVPP4qPR+bwLs6/aqpmIMu4LO71WeC9pAGRBmOr/5s9h6+KZuaA==, tarball: https://npm.pkg.github.com/download/@realdangol/jjindangol-ui/1.0.2/aba3a69c8a74f72808eec616d5af3b14e42bb023}
+  '@realdangol/jjindangol-ui@1.0.3':
+    resolution: {integrity: sha512-mIdOWXQfyv/TBsQ1bq8PGD55O0UuLMxWBogrVASrq4NWvXk3UmVQYj5sLGgzCxkDhKC9WYkZeCu8HvgjVPyynA==, tarball: https://npm.pkg.github.com/download/@realdangol/jjindangol-ui/1.0.3/46391f292f144a05d5f2d9d1a6db90370f48d75e}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -5923,6 +5929,11 @@ packages:
   tailwind-merge@3.3.1:
     resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
 
+  tailwind-scrollbar-hide@4.0.0:
+    resolution: {integrity: sha512-gobtvVcThB2Dxhy0EeYSS1RKQJ5baDFkamkhwBvzvevwX6L4XQfpZ3me9s25Ss1ecFVT5jPYJ50n+7xTBJG9WQ==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 4.0.0 || >= 4.0.0-beta.8 || >= 4.0.0-alpha.20'
+
   tailwindcss@3.4.17:
     resolution: {integrity: sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==}
     engines: {node: '>=14.0.0'}
@@ -6444,6 +6455,24 @@ packages:
 
   yup@1.6.1:
     resolution: {integrity: sha512-JED8pB50qbA4FOkDol0bYF/p60qSEDQqBD0/qeIrUCG1KbPBIQ776fCUNb9ldbPcSTxA69g/47XTo4TqWiuXOA==}
+
+  zustand@5.0.5:
+    resolution: {integrity: sha512-mILtRfKW9xM47hqxGIxCv12gXusoY/xTSHBYApXozR0HmQv299whhBeeAcRy+KrPPybzosvJBCOmVjq6x12fCg==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
 
 snapshots:
 
@@ -8423,7 +8452,7 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  '@realdangol/jjindangol-ui@1.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@realdangol/jjindangol-ui@1.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -13556,6 +13585,10 @@ snapshots:
 
   tailwind-merge@3.3.1: {}
 
+  tailwind-scrollbar-hide@4.0.0(tailwindcss@3.4.17):
+    dependencies:
+      tailwindcss: 3.4.17
+
   tailwindcss@3.4.17:
     dependencies:
       '@alloc/quick-lru': 5.2.0
@@ -14105,3 +14138,9 @@ snapshots:
       tiny-case: 1.0.3
       toposort: 2.0.2
       type-fest: 2.19.0
+
+  zustand@5.0.5(@types/react@18.3.12)(react@18.3.1)(use-sync-external-store@1.5.0(react@18.3.1)):
+    optionalDependencies:
+      '@types/react': 18.3.12
+      react: 18.3.1
+      use-sync-external-store: 1.5.0(react@18.3.1)

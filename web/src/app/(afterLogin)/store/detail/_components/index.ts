@@ -1,5 +1,6 @@
 export { default as EventButton } from './EventButton';
 export { default as LikeButton } from './LikeButton';
+export { default as MenuDetail } from './MenuDetail';
 export { default as MenuList } from './MenuList';
 export { default as MenuTab } from './MenuTab';
 export { default as StoreDetailBottomFixed } from './StoreDetailBottomFixed';
