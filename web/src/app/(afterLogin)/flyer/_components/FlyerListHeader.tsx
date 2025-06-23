@@ -10,9 +10,7 @@ const FlyerListHeader = () => {
         <h2 className="typo-body1-medium">
           내 전단지 <strong className="">20개</strong>
         </h2>
-        <Button variant="outlinePrimary" size="small">
-          전단지등록
-        </Button>
+        <Button size="small">전단지등록</Button>
       </div>
     </header>
   );
