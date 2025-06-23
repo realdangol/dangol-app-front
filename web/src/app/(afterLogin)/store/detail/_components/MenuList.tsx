@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
 
+import useDrawer from '@/hooks/useDrawer';
+
+import MenuDetail from './MenuDetail';
+
 const menus = {
   signature: [
     {
@@ -35,13 +39,24 @@ const menus = {
 };
 
 const MenuList = () => {
+  const { push } = useDrawer();
+
+  const handleMenuClick = () => {
+    push(<MenuDetail />);
+  };
+
   return (
     <div className="px-4 mt-4">
       <div className="h-12 flex items-center">
         <h2 className="typo-body1-bold text-neutral-600">대표메뉴</h2>
       </div>
       {menus.signature.map((menu) => (
-        <div key={menu.name} className="py-2 flex gap-4 border-b border-neutral-100" role="link">
+        <div
+          key={menu.name}
+          className="py-2 flex gap-4 border-b border-neutral-100 cursor-pointer"
+          role="link"
+          onClick={handleMenuClick}
+        >
           <div className="flex flex-col gap-2 flex-1">
             <p className="typo-body1-bold text-neutral-800">{menu.name}</p>
             <div className="flex flex-col gap-1 typo-label text-neutral-600">
@@ -58,7 +73,12 @@ const MenuList = () => {
         <h2 className="typo-body1-bold text-neutral-600">사이드메뉴</h2>
       </div>
       {menus.side.map((menu) => (
-        <div key={menu.name} className="py-2 flex gap-4 border-b border-neutral-100" role="link">
+        <div
+          key={menu.name}
+          className="py-2 flex gap-4 border-b border-neutral-100 cursor-pointer"
+          role="link"
+          onClick={handleMenuClick}
+        >
           <div className="flex flex-col gap-2 flex-1">
             <p className="typo-body1-bold text-neutral-800">{menu.name}</p>
             <div className="flex flex-col gap-1 typo-label text-neutral-600">

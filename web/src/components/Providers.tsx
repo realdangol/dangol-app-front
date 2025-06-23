@@ -8,6 +8,7 @@ import { initMSW } from '@/mocks';
 
 import { DialogProvider } from './Dialog/DialogProvider';
 import DialogRenderer from './Dialog/DialogRenderer';
+import DrawerProvider from './Drawer/DrawerProvider';
 
 const Providers = ({ children }: PropsWithChildren) => {
   useEffect(() => {
@@ -19,10 +20,12 @@ const Providers = ({ children }: PropsWithChildren) => {
   return (
     <SessionProvider>
       <Suspense>
-        <DialogProvider>
-          {children}
-          <DialogRenderer />
-        </DialogProvider>
+        <DrawerProvider>
+          <DialogProvider>
+            {children}
+            <DialogRenderer />
+          </DialogProvider>
+        </DrawerProvider>
       </Suspense>
     </SessionProvider>
   );
