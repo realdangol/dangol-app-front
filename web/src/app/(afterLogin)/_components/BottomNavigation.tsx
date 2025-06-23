@@ -9,7 +9,7 @@ import React from 'react';
 const BottomNavigation = () => {
   const pathname = usePathname();
 
-  if (['/cart'].includes(pathname)) return null;
+  if (['/cart', '/order'].includes(pathname)) return null;
 
   const items = [
     {
