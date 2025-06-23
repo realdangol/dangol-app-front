@@ -2,6 +2,7 @@ export { default as EventButton } from './EventButton';
 export { default as LikeButton } from './LikeButton';
 export { default as MenuList } from './MenuList';
 export { default as MenuTab } from './MenuTab';
+export { default as StoreDetailBottomFixed } from './StoreDetailBottomFixed';
 export { default as StoreDetailHeader } from './StoreDetailHeader';
 export { default as StoreDetailTab } from './StoreDetailTab';
 export { default as StoreInfoButton } from './StoreInfoButton';
