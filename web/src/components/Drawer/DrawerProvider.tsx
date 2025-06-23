@@ -10,6 +10,7 @@ type DrawerState = {
   drawerStack: ReactElement[];
   push: (component: ReactElement) => void;
   pop: () => void;
+  clear: () => void;
 };
 
 export const DrawerContext = createContext<DrawerState | null>(null);
@@ -32,6 +33,10 @@ const DrawerProvider = ({ children }: { children: React.ReactNode }) => {
     setDrawerStack((prev) => prev.slice(0, -1));
   };
 
+  const clear = () => {
+    setDrawerStack([]);
+  };
+
   useEffect(() => {
     if (drawerStack.length > 0) {
       document.body.style.overflow = 'hidden';
@@ -41,7 +46,7 @@ const DrawerProvider = ({ children }: { children: React.ReactNode }) => {
   }, [drawerStack]);
 
   return (
-    <DrawerContext.Provider value={{ drawerStack, push, pop }}>
+    <DrawerContext.Provider value={{ drawerStack, push, pop, clear }}>
       {children}
       <Drawers />
     </DrawerContext.Provider>

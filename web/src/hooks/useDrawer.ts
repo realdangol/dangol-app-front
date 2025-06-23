@@ -7,12 +7,13 @@ const useDrawer = () => {
 
   if (!context) throw Error('DrawerProvider 사용해주세요.');
 
-  const { drawerStack, push, pop } = context;
+  const { drawerStack, push, pop, clear } = context;
 
   return {
     drawerStack,
     push,
     pop,
+    clear,
   };
 };
 
